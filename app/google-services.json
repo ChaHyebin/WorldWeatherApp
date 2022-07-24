@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "749592747119",
+    "project_id": "cityweather-357210",
+    "storage_bucket": "cityweather-357210.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749592747119:android:dd4dac117adb7a863b419a",
+        "android_client_info": {
+          "package_name": "com.greenspace.weatherapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749592747119-jgna7oe3uisgrqhqbhe2co5ipjda2js1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkeYQBrk7V1ZEf0VokLSYewMDqPBl1jVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749592747119-jgna7oe3uisgrqhqbhe2co5ipjda2js1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="item"
+            type="com.greenspace.weatherapp.model.WeatherResp" />
+
+        <variable
+            name="itemClickListener"
+            type="com.greenspace.weatherapp.common.OnItemClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_city_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{item.cityName}"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_remove"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_remove"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:onClick="@{()->itemClickListener.onItemClick(item)}"
+            android:background="@drawable/iconmonstr_trash_can_thin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_city_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_city_title" />
+
+        <View
+            android:id="@+id/v_grid"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tv_city_title"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_weather_detail"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:listItem="@{item.daily}"
+            app:layout_constraintTop_toBottomOf="@id/v_grid"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
